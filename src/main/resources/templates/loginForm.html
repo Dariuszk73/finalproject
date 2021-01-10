@@ -2,9 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>finalproject - login page</title>
 </head>
 <body>
-<h1>DK</h1>
+<form th:action="@{/login-submit-data}" method="post">
+    <input type="text" name="username" placeholder="Enter your e-mail...">
+    <br>
+    <input type="password" name="password" placeholder="Enter your password...">
+    <br>
+    <input type="submit" value="Login">
+</form>
 </body>
 </html>
