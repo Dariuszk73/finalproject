@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Getter
@@ -17,7 +16,7 @@ public class NewUserForm {
     @Size(min = 8, max = 30, message = "Password lehgth must be min 8 and max 30")
     private String password;
 
-    @NotNull
+
     @Size(max = 50)
     @NotBlank(message = "Nickname cannot be blank")
 private String nickname;
