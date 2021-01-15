@@ -8,7 +8,10 @@
 
 <body>
 <h1>Serwis agregujący wydarzenia</h1>
-<h2> <span th:text="${loggedAs}"></span> </h2>
+<div th:if="${userLogged != null}">
+    <li><a th:href="@{/add/event}">Add new post</a></li>
+      Zalogowany jako: <span th:text="${loggedAs}"></span>
+</div>
 <div>
     <ul>
     <li><a th:href="@{/login}">Zaloguj</a></li>

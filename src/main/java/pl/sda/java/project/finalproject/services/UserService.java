@@ -25,6 +25,7 @@ public class UserService {
         if (existsByEmail) {
             throw new UserWithSuchEmailExistsExepction(newUserForm.getEmail());
         }
+//final String roleName = "COMMON_USER";
 
         final UserEntity user = new UserEntity();
         user.setEmail(newUserForm.getEmail());

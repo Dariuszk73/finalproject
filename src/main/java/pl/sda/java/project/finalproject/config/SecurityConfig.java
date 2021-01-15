@@ -18,6 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers("/add/event").hasAnyAuthority("COMMON_USER", "ORGANISER")
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()
