@@ -38,6 +38,6 @@ public class EventController {
             return "eventForm";
         }
         eventService.addEvent(newEventForm);
-        return "mainPageViev";
+        return "mainPageView";
     }
 }

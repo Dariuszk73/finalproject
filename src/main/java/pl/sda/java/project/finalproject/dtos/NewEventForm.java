@@ -8,6 +8,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -16,12 +17,12 @@ public class NewEventForm {
     private String title;
 
     @NotNull
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private String startDate;
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDateTime startDate;
 
     @NotNull
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private String endDate;
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDateTime endDate;
 
     @NotNull
     @Size(min = 20)

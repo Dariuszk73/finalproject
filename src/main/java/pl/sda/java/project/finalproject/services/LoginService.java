@@ -23,19 +23,6 @@ public class LoginService implements InitializingBean {
         logged = false;
         this.userRepository = userRepository;
     }
-//    public void loginUser(String username, String password) {
-//
-//
-//        final UserEntity userEntity = userRepository.findUserByLogin(username)
-//                .orElseThrow(() -> new UserDoesntExistException(username));
-//
-//        if (!userEntity.getPassword().equals(password)) {
-//            throw new InvalidCredentialsException("invalid password");
-//        }
-//
-//        this.userSessionDto = new UserSessionDto(userEntity.getEmail(), userEntity.getNickname());
-//        this.logged = true;
-//    }
 
     public boolean isLogged() {
         return logged;
