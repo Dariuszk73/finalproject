@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -27,4 +29,10 @@ public class EventEntity {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(columnDefinition = "user_entity_id")
     private UserEntity userEntity;
+    @ManyToMany
+    @JoinColumn(name = "users_signed_events")
+    private final Set<UserEntity> signedUp = new HashSet<>();
+    public void signUp(UserEntity userEntity){
+        signedUp.add(userEntity);
+    }
 }

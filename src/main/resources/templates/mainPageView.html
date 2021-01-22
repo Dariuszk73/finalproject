@@ -2,33 +2,12 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <th:block th:replace="/navbar :: headScripts"></th:block>
+    <th:block th:replace="navbar :: headScripts"></th:block>
     <title>Title</title>
 </head>
 <body>
-<div th:replace="/navbar :: navbar"></div>
+<div th:replace="navbar :: navbar"></div>
 
-
-<div th:if="${events != null}">
-
-
-
-    <div th:each="event : ${events}">
-        <div>
-            <div>
-                When the Meeting starting <h2 th:text="${#temporals.format(event.startDate, 'yyyy-MM-dd')}">2021-01-05</h2>
-                To date end Meeting: <h2 th:text="${#temporals.format(event.endDate, 'yyyy-MM-dd')}">2021-01-05</h2>
-            </div>
-            <h3><a th:href="@{/event/{eventId}(eventID=${event.id})}" th:text="${event.title}"></a>Post title.</h3>
-
-
-            Body: <h4 th:text="${#strings.abbreviate(event.shortEventInfo, 53)}"></h4>
-        </div>
-    </div>
-
-
-</div>
-
-
+<div th:replace="navbar :: footer"></div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package pl.sda.java.project.finalproject.dtos;
+package pl.sda.java.project.finalproject.dtos.request;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -5,7 +5,8 @@
 
     <th:block th:fragment="headScripts">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+              integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+              crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
                 crossorigin="anonymous"></script>
@@ -17,30 +18,49 @@
                 crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
                 integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
-                crossorigin="anonymous"></script></script>
+                crossorigin="anonymous"></script>
+        </script>
     </th:block>
     <title>Title</title>
 </head>
 <body>
 
-<div th:fragment="navbar">
-    <h1>Serwis agregujący wydarzenia</h1>
+<div class="container" th:fragment="navbar">
+    <h1 class="text-center">Serwis agregujący wydarzenia</h1>
     <div th:if="${loggedAs == null}">
         <div>
-            <a th:href="@{/login}">Login</a>
-            <a th:href="@{/register}">Register</a>
+            <a th:href="@{/login}">Zaloguj</a>
+            <a th:href="@{/register}">Zarejestruj</a>
         </div>
     </div>
     <div th:if="${loggedAs != null}">
         LoggedAs: <span th:text="${loggedAs}">...</span>
         <h4>Menu: </h4>
         <div>
-             <a th:href="@{/add/event}">Add new Event</a>
+            <a th:href="@{/add/event}">Dodaj nowe wydarzenie</a>
+        </div>
+        <div>
+            <a th:href="@{/actual-events}">Pokaż aktualne wydarzenia</a>
         </div>
     </div>
 
+
+<div>
+    <form th:action="@{/search-event}">
+        <input type="search" name="title" placeholder="Szukaj wydarzenia..." th:value="${title}">
+        <label>Wybierz czas</label>
+        <select name="timePeriod">
+            <option th:each="option : ${searchOptions}"
+                    th:value="${option.optionValue}"
+                    th:text="${option.optionName}"
+                    th:selected="${option.optionName.equals(timePeriod)}">
+
+            </option>
+        </select>
+        <button type="submit">Szukaj</button>
+    </form>
 </div>
-
-
+</div>
+<div th:fragment="footer">Copyright dk</div>
 </body>
 </html>

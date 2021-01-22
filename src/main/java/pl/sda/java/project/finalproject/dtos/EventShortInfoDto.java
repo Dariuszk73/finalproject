@@ -1,9 +1,11 @@
 package pl.sda.java.project.finalproject.dtos;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 @Getter
+@Setter
 public class EventShortInfoDto {
     private final Long id;
 

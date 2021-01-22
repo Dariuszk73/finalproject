@@ -6,7 +6,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.sda.java.project.finalproject.dtos.NewUserForm;
+import pl.sda.java.project.finalproject.dtos.request.NewUserForm;
 import pl.sda.java.project.finalproject.services.UserService;
 import javax.validation.Valid;
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:block th:replace="navbar :: headScripts"></th:block>>
+    <meta charset="UTF-8">
+
+    <title>Found events</title>
+</head>
+<body>
+<div th:replace="/navbar :: navbar"></div>
+<div>
+<form th:action="@{/add/event}" th:object="${newEventForm}" method="post">
+    Title: <input type="text" th:field="*{title}" placeholder="Enter event title...">
+    <span th:errors="*{title}"></span>
+    <br>
+    Content: <textarea th:field="*{description}" rows="10" cols="100"></textarea>
+    <span th:errors="*{description}"></span>
+    <br>
+    Start Event date: <input type="datetime-local" th:value="*{startDate}" th:field="*{startDate}"
+                               placeholder="Event start...">
+    <span th:errors="*{startDate}"></span>
+
+    End Event date: <input type="datetime-local" th:value="*{endDate}" th:field="*{endDate}"
+                             placeholder="Event end...">
+    <span th:errors="*{endDate}"></span>
+    <input type="submit" value="Add new event">
+</form>
+</div>
+</body>
+</html>
