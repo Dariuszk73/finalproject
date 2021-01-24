@@ -24,4 +24,15 @@ public class EventShortInfoDto {
         this.endDate = endDate;
         this.shortEventInfo = shortEventInfo;
     }
+
+    @Override
+    public String toString() {
+        return "EventShortInfoDto{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", shortEventInfo='" + shortEventInfo + '\'' +
+                '}';
+    }
 }

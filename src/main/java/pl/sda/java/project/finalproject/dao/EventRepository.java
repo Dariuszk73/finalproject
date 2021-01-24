@@ -4,6 +4,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import pl.sda.java.project.finalproject.entities.EventEntity;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -21,5 +22,9 @@ List<EventEntity> findByTitleContaining(String title, Sort sort);
 boolean existsByIdAndUserEntityEmail(Long id, String email);
 
 boolean existsByIdAndSignedUpEmail(Long eventId, String email);
+
+List<EventEntity> findByStartDateGreaterThanEqualAndEndDateLessThanEqual(LocalDate startDate, LocalDate endDate, Sort sort);
+
+List<EventEntity> findByStartDateGreaterThanEqual(LocalDate startDate, Sort sort);
 
 }
