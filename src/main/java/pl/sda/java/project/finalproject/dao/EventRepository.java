@@ -23,8 +23,8 @@ boolean existsByIdAndUserEntityEmail(Long id, String email);
 
 boolean existsByIdAndSignedUpEmail(Long eventId, String email);
 
-List<EventEntity> findByStartDateGreaterThanEqualAndEndDateLessThanEqual(LocalDate startDate, LocalDate endDate, Sort sort);
+List<EventEntity> findByStartDateGreaterThanEqualAndEndDateLessThanEqual(LocalDateTime startDate, LocalDateTime endDate, Sort sort);
 
-List<EventEntity> findByStartDateGreaterThanEqual(LocalDate startDate, Sort sort);
+List<EventEntity> findByStartDateGreaterThanEqual(LocalDateTime startDate, Sort sort);
 
 }
